@@ -29,22 +29,26 @@
 		tileSize: 512,
 		zoomOffset: -1
 	}).addTo(mymap);
+	
+	
+//Add coordinates here
+	var planes1 = [
+  ["Afghan",33.93911,67.709953  ],
+  ["NARELA DELHI",28.85396,77.091784  ],
+  ["KANJHAWALA DELHI",28.734729,77.004176  ],
+  ["BAWANA",28.805465,77.046301  ],
+  ["KASHMIRI GATE",28.666472,77.233289  ],
+  ["NARAINA GOPINATH BAZAAR",28.596289,77.133865  ]
+];
 
-
-	L.circle([40.768696, -73.991821], {
-		color: 'red',
-		fillColor: '#f03',
-		fillOpacity: 0.5,
-		radius: 500
-	}).addTo(mymap);
-
-	L.circle([37.09024, -95.712891], {
-		color: 'black',
-		fillColor: '#000',
-		fillOpacity: 0.5,
-		radius: 900
-	}).addTo(mymap);
-
+//Change the size and color of circular markers here
+		for (var i = 0; i < planes1.length; i++) {
+			circle = new L.circle([planes1[i][1],planes1[i][2]], 500, {
+			  fillOpacity: 1.0
+			})
+				.bindPopup(planes1[i][0])
+				.addTo(map);
+		}
 </script>
 
 
